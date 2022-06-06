@@ -7,10 +7,12 @@ export const useCounterStore = defineStore({
   // Store state
   state: () => ({
     counter: 0,
+    name: 'icarus',
   }),
   // Store getters
   getters: {
     doubleCount: (state) => state.counter * 2,
+    greetWithName: (state) => `Hello there! ${state.name}`,
   },
   // Store actions
   actions: {
@@ -18,5 +20,8 @@ export const useCounterStore = defineStore({
       // Increments the counter
       this.counter++;
     },
+    decrement() {
+      this.counter--;
+    }
   },
 });
